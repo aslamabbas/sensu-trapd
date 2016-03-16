@@ -113,7 +113,7 @@ configuration can be specified on the command line. See the help for more info. 
 
 - **daemons section**: These are the arguments for the sensu-trapd daemon. When sensu is installed it creates the user:group as sensu:sensu. The same is used here. 
 - **dispatcher section**: The sensu server has a socket opened by default to listen to external events. sensu-trapd dispatches the sensu events to this socket. Refer [1] and [2]. The events are sent in json format and logged in the file specified by events_log. You can see some additional options in src/sensu/snmp/config.py
-- **mibs section**: Here the path to the converted MIB files and their names are provided here
+- **mibs section**: Here the path to the converted MIB files and their names are provided.
 - **snmp section**: sensu-trapd creates an SNMP engine using pySNMP. The attributes of this engine are provided here. The SNMP trap must be send with the same attributes.Change listen_address to 0.0.0.0 if you want it to listen to traps from other agents. 
 
 ### Configuring Traps
@@ -145,8 +145,8 @@ in conf/config.json). Basic configuration looks like:
               netSnmpExampleHeartbeatRate i 1234
     ```
     
-    Then, MIB-name = NET-SNMP-EXAMPLES-MIB,\
-    name-of-the-notification = netSnmpExampleHeartbeatNotification,\
+    Then, MIB-name = NET-SNMP-EXAMPLES-MIB,  
+    name-of-the-notification = netSnmpExampleHeartbeatNotification,  
     first-argument-the-notification-sends = netSnmpExampleHeartbeatRate
 
 - **events section**: Here you specify a check name.This will be used by Sensu as the name of the check, so make it meaningful. Additionally, you can specify the output of the check, handlers, and severity of the event. 
@@ -211,6 +211,6 @@ trap is received.
 
 ### References 
 
-[1]https://sensuapp.org/docs/latest/clients#socket-attributes \
+[1]https://sensuapp.org/docs/latest/clients#socket-attributes  
 [2]https://sensuapp.org/docs/latest/clients#client-socket-input
 
